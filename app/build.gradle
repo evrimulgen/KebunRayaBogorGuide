@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.0.1"
+
+    defaultConfig {
+        applicationId "com.krbguide.kebunrayabogorguide"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Google Play Services
+    compile 'com.google.android.gms:play-services:6.1.11'
+
+    // Google Support Library
+    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.android.support:support-v13:21.0.0'
+
+    // Custom Library
+       // Staggered GridView
+    compile 'com.etsy.android.grid:library:1.0.5'
+       // Floating Action Button
+    compile 'com.melnykov:floatingactionbutton:1.0.6'
+       // Material Dialog
+    compile 'me.drakeet.materialdialog:library:1.0.7'
+}

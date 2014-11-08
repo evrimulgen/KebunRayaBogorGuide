@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Versi Aplikasi">
+        <CheckBoxPreference
+            android:key="status"
+            android:title="Status"
+            />
+        <EditTextPreference
+            android:key="appversion"
+            android:title="@string/app_name"
+            android:dialogTitle="Enter Values" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
