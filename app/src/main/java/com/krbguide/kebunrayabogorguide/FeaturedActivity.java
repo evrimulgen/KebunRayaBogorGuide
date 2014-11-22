@@ -20,10 +20,10 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.krbguide.kebunrayabogorguide.adapter.DrawerListAdapter;
-import com.krbguide.kebunrayabogorguide.adapter.DrawerSimpleListAdapter;
-import com.krbguide.kebunrayabogorguide.adapter.list.DrawerList;
-import com.krbguide.kebunrayabogorguide.adapter.list.DrawerSimpleList;
+import com.krbguide.kebunrayabogorguide.adapter.CustomList1Adapter;
+import com.krbguide.kebunrayabogorguide.adapter.CustomList2Adapter;
+import com.krbguide.kebunrayabogorguide.list.CustomList1;
+import com.krbguide.kebunrayabogorguide.list.CustomList2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,22 +31,24 @@ import java.util.List;
 
 public class FeaturedActivity extends ActionBarActivity {
 
-    // Toolbar
+    /* AppCompat Toolbar */
     private Toolbar mToolbar;
     int mTitle = R.string.title_activity_featured;
 
-    // Navigation Drawer
+    /* AppCompat Navigation Drawer */
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
 
+    /* Navigation Key */
     private static long back_pressed;
 
-    // ListViewFeatured
+    /* ListView Featured */
     protected ListView listView;
     protected ListAdapter listAdapter;
     SQLiteDatabase db;
     Cursor mCursor;
 
+    /* Activity onCreate Method */
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +57,11 @@ public class FeaturedActivity extends ActionBarActivity {
 
         initToolbar();
         initDrawer();
-        initDrawerList();
-        initDrawerSimpleList();
         initDatabaseList();
 
     }
 
+    /* AppCompat Toolbar */
     private void initToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.util_toolbar);
 
@@ -71,8 +72,10 @@ public class FeaturedActivity extends ActionBarActivity {
         }
     }
 
+    /* AppCompat Drawer */
     private void initDrawer() {
 
+        /* Create AppCompat Drawer */
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
             @Override
@@ -90,24 +93,24 @@ public class FeaturedActivity extends ActionBarActivity {
 
         drawerLayout.setDrawerListener(drawerToggle);
 
-    }
 
-    private void initDrawerList() {
+        /* Set AppCompat Drawer MainMenu using ListView */
+        ListView lvDrawer1 = (ListView) findViewById(R.id.lv_featured_drawer1);
 
-        ListView drawerListView = (ListView) findViewById(R.id.drawerListFeatured);
+        List<CustomList1> lvDrawerItem1 = new ArrayList<CustomList1>();
 
-        List<DrawerList> drawerList = new ArrayList<DrawerList>();
-
-        drawerList.add(new DrawerList(BitmapFactory.decodeResource(getResources(),
+        lvDrawerItem1.add(new CustomList1(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_maps), "Peta Lokasi"));
-        drawerList.add(new DrawerList(BitmapFactory.decodeResource(getResources(),
+        lvDrawerItem1.add(new CustomList1(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_featured), "Situs Favorit"));
+        lvDrawerItem1.add(new CustomList1(BitmapFactory.decodeResource(getResources(),
+                R.drawable.ic_facility), "Fasilitas Umum"));
 
-        DrawerListAdapter adapter = new DrawerListAdapter(this, drawerList);
-        drawerListView.setAdapter(adapter);
+        CustomList1Adapter adapterDrawer1 = new CustomList1Adapter(this, lvDrawerItem1);
+        lvDrawer1.setAdapter(adapterDrawer1);
 
-        // Primary Drawer ListView onClickListener
-        drawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        // Set MainMenu Listener
+        lvDrawer1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -115,51 +118,48 @@ public class FeaturedActivity extends ActionBarActivity {
                 TextView textView = (TextView) view.findViewById(R.id.mLabel);
                 String mLabel = textView.getText().toString();
                 if (mLabel.equals("Peta Lokasi")) {
-                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                    /* create new activity */
+                    // Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                    // startActivity(intent);
+
+                    /* just finish this activity and go back to previous (MapsActivity) */
+                    finish();
+                } else if (mLabel.equals("Situs Favorit")) {
+                    view.setSelected(true);
+                } else if (mLabel.equals("Fasilitas Umum")) {
+                    Intent intent = new Intent(getApplicationContext(), FacilitiesActivity.class);
                     startActivity(intent);
                     finish();
-                }
-                else if (mLabel.equals("Situs Favorit")) {
-                    Toast.makeText(getApplicationContext(), "Anda sudah berada di menu " + mLabel, Toast.LENGTH_LONG).show();
-                    drawerLayout.closeDrawers();
                 }
 
             }
 
         });
 
-    }
 
-    private void initDrawerSimpleList() {
+        /* AppCompat Drawer SecondaryMenu using ListView */
+        ListView lvDrawer2 = (ListView) findViewById(R.id.lv_featured_drawer2);
 
-        ListView drawerSimpleListView = (ListView) findViewById(R.id.drawerListFeaturedSecondary);
+        List<CustomList2> lvDrawerItem2 = new ArrayList<CustomList2>();
 
-        List<DrawerSimpleList> drawerSimpleList = new ArrayList<DrawerSimpleList>();
+        lvDrawerItem2.add(new CustomList2("Bantuan"));
+        lvDrawerItem2.add(new CustomList2("Tentang"));
 
-        drawerSimpleList.add(new DrawerSimpleList("Pengaturan"));
-        drawerSimpleList.add(new DrawerSimpleList("Bantuan"));
-        drawerSimpleList.add(new DrawerSimpleList("Tentang"));
-
-        DrawerSimpleListAdapter adapter = new DrawerSimpleListAdapter(this, drawerSimpleList);
-        drawerSimpleListView.setAdapter(adapter);
+        CustomList2Adapter adapterDrawer2 = new CustomList2Adapter(this, lvDrawerItem2);
+        lvDrawer2.setAdapter(adapterDrawer2);
 
         // Secondary Drawer ListView onClickListener
-        drawerSimpleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvDrawer2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 TextView textView = (TextView) view.findViewById(R.id.mLabel);
                 String mLabel = textView.getText().toString();
-                if (mLabel.equals("Pengaturan")) {
+                if (mLabel.equals("Bantuan")) {
                     Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_LONG).show();
                     drawerLayout.closeDrawers();
-                }
-                else if (mLabel.equals("Bantuan")) {
-                    Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_LONG).show();
-                    drawerLayout.closeDrawers();
-                }
-                else if (mLabel.equals("Tentang")) {
+                } else if (mLabel.equals("Tentang")) {
                     Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
                     startActivity(intent);
                 }
@@ -170,17 +170,19 @@ public class FeaturedActivity extends ActionBarActivity {
 
     }
 
+    /* Featured Database ListView */
     @SuppressWarnings("deprecation")
     protected void initDatabaseList() {
 
-        db = (new Database(this)).getWritableDatabase();
+        db = (new DatabaseFeatured(this)).getWritableDatabase();
         listView = (ListView) findViewById(R.id.listViewFeatured);
 
         try {
-            mCursor = db.rawQuery("SELECT * FROM detail ORDER BY db_name ASC", null);
+
+            mCursor = db.rawQuery("SELECT * FROM detail_featured ORDER BY db_name ASC", null);
             listAdapter =
-                    new SimpleCursorAdapter(this, R.layout.row_custom_contentlist_1, mCursor,
-                    new String[] { "db_img", "db_name", "db_subname" },
+                    new SimpleCursorAdapter(this, R.layout.row_customcontentlist1, mCursor,
+                    new String[] { "db_ico", "db_name", "db_subname" },
                     new int[] { R.id.mContentIcon, R.id.mContentLabel, R.id.mContentSublabel });
             listView.setAdapter(listAdapter);
             listView.setTextFilterEnabled(true);
@@ -189,19 +191,23 @@ public class FeaturedActivity extends ActionBarActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                     detail(position);
-
                 }
+
             });
+
         }
+
         catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
+    /* Featured Database ListView Listener */
     public void detail(int position) {
 
         int img = 0;
+        int ico = 0;
         String name = "";
         String subname = "";
         String description = "";
@@ -210,6 +216,7 @@ public class FeaturedActivity extends ActionBarActivity {
         if(mCursor.moveToFirst()) {
             mCursor.moveToPosition(position);
             img = mCursor.getInt(mCursor.getColumnIndex("db_img"));
+            ico = mCursor.getInt(mCursor.getColumnIndex("db_ico"));
             name = mCursor.getString(mCursor.getColumnIndex("db_name"));
             subname = mCursor.getString(mCursor.getColumnIndex("db_subname"));
             description = mCursor.getString(mCursor.getColumnIndex("db_description"));
@@ -218,6 +225,7 @@ public class FeaturedActivity extends ActionBarActivity {
 
         Intent mIntent = new Intent(this, DetailActivity.class);
         mIntent.putExtra("dataImg", img);
+        mIntent.putExtra("dataIco", ico);
         mIntent.putExtra("dataName", name);
         mIntent.putExtra("dataSubName", subname);
         mIntent.putExtra("dataDescription", description);
@@ -227,26 +235,33 @@ public class FeaturedActivity extends ActionBarActivity {
 
     }
 
+    /* Drawer onPostCreate Method */
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         drawerToggle.syncState();
     }
 
+    /* Drawer onConfigurationChanged Method */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
+    /* Navigation onBackPressed Method */
     @Override
     public void onBackPressed()
     {
-        if (back_pressed + 2000 > System.currentTimeMillis()) super.onBackPressed();
-        else Toast.makeText(getBaseContext(), "Tekan tombol kembali sekali lagi untuk keluar!", Toast.LENGTH_SHORT).show();
-        back_pressed = System.currentTimeMillis();
+        /* create new activity */
+        // Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        // startActivity(intent);
+
+        /* just finish this activity and go back to previous (MapsActivity) */
+        finish();
     }
 
+    /* Toolbar onOptionsItemSelected Method */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

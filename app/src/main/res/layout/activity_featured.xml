@@ -70,7 +70,7 @@
 
 
             <ListView
-                android:id="@+id/drawerListFeatured"
+                android:id="@+id/lv_featured_drawer1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"/>
 
@@ -86,7 +86,7 @@
                 android:background="#F0F0F0">
 
                 <ListView
-                    android:id="@+id/drawerListFeaturedSecondary"
+                    android:id="@+id/lv_featured_drawer2"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"/>
 

@@ -6,7 +6,7 @@
     </style>
 
     <!-- My Base application theme. -->
-    <style name="myAppTheme" parent="Theme.AppCompat">
+    <style name="myAppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryColorDark</item>
         <!-- disable window title -->
@@ -14,6 +14,9 @@
         <!-- disable window actionbar, cause u have an toolbar -->
         <item name="windowActionBar">false</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:textColorPrimary">@color/abc_primary_text_material_dark</item>
+        <item name="android:textColorSecondary">@color/abc_secondary_text_material_dark</item>
+        <item name="actionMenuTextColor">@color/abc_primary_text_material_dark</item>
     </style>
 
     <!--styling color for arrow-->

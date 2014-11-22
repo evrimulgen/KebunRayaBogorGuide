@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 
 public class SplashActivity extends Activity {
 
@@ -14,6 +17,14 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash);
+
+        YoYo.with(Techniques.SlideInUp)
+                .duration(1500)
+                .playOn(findViewById(R.id.mIconSplash));
+
+        YoYo.with(Techniques.SlideInUp)
+                .duration(1500)
+                .playOn(findViewById(R.id.mLabelSplash));
 
         initSplash();
     }
@@ -28,7 +39,7 @@ public class SplashActivity extends Activity {
                 SplashActivity.this.finish();
                 overridePendingTransition(R.layout.splash_fadein,R.layout.splash_fadeout);
             }
-        }, 1000);
+        }, 2000);
 
     }
 

@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.krbguide.kebunrayabogorguide.R;
-import com.krbguide.kebunrayabogorguide.adapter.list.ContentList;
-import com.krbguide.kebunrayabogorguide.adapter.list.DrawerList;
+import com.krbguide.kebunrayabogorguide.list.ContentList;
 
 import java.util.List;
 
@@ -47,7 +46,7 @@ public class ContentListAdapter extends BaseAdapter {
         // inflating list view layout if null
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(mContext);
-            convertView = inflater.inflate(R.layout.row_custom_contentlist_1, null);
+            convertView = inflater.inflate(R.layout.row_customcontentlist1, null);
         }
         // set icon
         ImageView mIcon = (ImageView) convertView.findViewById(R.id.mContentIcon);
@@ -56,10 +55,12 @@ public class ContentListAdapter extends BaseAdapter {
         // set label
         TextView mLabel = (TextView) convertView.findViewById(R.id.mContentLabel);
         mLabel.setText(entry.getLabel());
+        mLabel.setSelected(true);
 
         // set label
         TextView mSublabel = (TextView) convertView.findViewById(R.id.mContentSublabel);
         mSublabel.setText(entry.getSublabel());
+        mSublabel.setSelected(true);
 
         return convertView;
     }

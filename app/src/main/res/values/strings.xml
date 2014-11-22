@@ -8,22 +8,55 @@
     <string name="rightreserved">All Rights Reserved.</string>
     <string name="hello_world">Hi, Dunia!</string>
 
-    <!-- For Main Activity Title -->
-    <string name="title_activity_splash">SplashActivity</string>
+    <!-- For Activity Title -->
+    <string name="title_activity_splash">Splash Screen</string>
     <string name="title_activity_maps">Peta Lokasi</string>
     <string name="title_activity_featured">Situs Favorit</string>
+    <string name="title_activity_facilities">Fasilitas Umum</string>
+    <string name="title_activity_help">Bantuan</string>
     <string name="title_activity_detail">Detail</string>
     <string name="title_activity_about">Tentang</string>
-
-    <!-- For Group Title -->
-    <string name="title_group_facilities">Fasilitas Umum</string>
 
     <!-- For Navigration Drawer Menu -->
     <string name="title_drawer_maps">Peta Lokasi</string>
     <string name="title_drawer_featured">Lokasi Favorit</string>
+    <string name="title_drawer_facilities">Fasilitas Umum</string>
 
     <!-- For Action Menu Button -->
     <string name="action_navigate">Navigasi ke Lokasi</string>
+
+    <!-- For DialogBox -->
+    <string name="action_positive">OK</string>
+    <string name="action_negative">Cancel</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_about_developer">Tentang Pengembang</string>
+    <string name="action_opensource_license">Lisensi OpenSource</string>
+    <string name="action_about_developer_body">
+        <![CDATA[
+        Kebun Raya Bogor Guide, sebuah aplikasi berbasis lokasi untuk mempermudah wisata di Kebun Raya Bogor<br/>
+        <br/>
+        Dibuat oleh <b>Septian Nugraha</b>.<br/>
+        <a href=\'https://www.facebook.com/septian.nugraha.98\'>Facebook</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/Septian10219\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://plus.google.com/114794849697807433661\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/titenx10219\'>GitHub</a>
+        ]]>
+    </string>
+
+    <!-- For Help Activity -->
+    <string name="activity_help_content">
+        Aplikasi <b>Kebun Raya Bogor Guide</b> ini merupakan sebuah aplikasi android yang membantu pengunjung untuk menemukan lokasi, sarana dan fasilitas yang berada di Kebun Raya Bogor.\n
+        \n
+        - <i>Peta Lokasi</i> \t: Menu ini menampilkan lokasi sarana fasilitas Kebun Raya Bogor secara keseluruhan.\n
+        \n
+        - <i>Situs Favorit</i> \t: Menu ini mengulas tentang informasi tempat-tempat menarik yang berada di Kebun Raya Bogor.\n
+        \n
+        - <i>Fasilitas Umum</i> \t: Menu ini menampilkan fasilitas umum seperti Pintu Masuk, Toilet, Musholla, Cafe, dll.\n
+        \n
+        - <i>Bantuan</i> \t: Menu ini akan menampilkan bantuan para pengguna mengenai fungsi dari menu yang terdapat pada aplikasi ini.\n
+        \n
+        - <i>Tentang</i> \t: Menu ini akan menampilkan akan menampilkan profil singkat mengenai pembuat aplikasi.
+    </string>
 
     <!-- Drawer Open & Close -->
     <string name="drawer_open">Buka Drawer</string>

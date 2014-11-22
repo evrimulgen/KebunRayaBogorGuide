@@ -55,6 +55,20 @@
         </activity>
 
 
+        <!-- Facilities Activity -->
+        <activity
+            android:name="com.krbguide.kebunrayabogorguide.FacilitiesActivity"
+            android:label="@string/title_activity_facilities" >
+        </activity>
+
+
+        <!-- Help Activity -->
+        <activity
+            android:name="com.krbguide.kebunrayabogorguide.HelpActivity"
+            android:label="@string/title_activity_help" >
+        </activity>
+
+
         <!-- About Activity -->
         <activity
             android:name="com.krbguide.kebunrayabogorguide.AboutActivity"

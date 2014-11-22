@@ -73,7 +73,7 @@
 
 
             <ListView
-                android:id="@+id/drawerListMaps"
+                android:id="@+id/lv_maps_drawer1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" />
 
@@ -89,7 +89,7 @@
                 android:background="#F0F0F0">
 
                 <ListView
-                    android:id="@+id/drawerListMapsSecondary"
+                    android:id="@+id/lv_maps_drawer2"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"/>
 
@@ -99,76 +99,20 @@
 
         <!-- navigation drawer kanan -->
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_gravity="end"
             android:layout_width="240dp"
             android:layout_height="fill_parent"
-            android:background="#F0F0F0"
+            android:background="@color/white"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/group_facilitiies"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="@string/title_group_facilities"
-                android:textColor="@color/black"/>
+            <ListView
+                android:id="@+id/lv_maps_drawer3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
 
-            <View
-                android:id="@+id/view_line_1"
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/group_facilitiies"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="1dp"
-                android:background="#DADADC" />
 
-            <include
-                android:id="@+id/showKebunRayaBogor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/view_line_1"
-                layout="@layout/drawer_list_option_1" />
-            <include
-                android:id="@+id/showPintuMasuk"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/showKebunRayaBogor"
-                layout="@layout/drawer_list_option_2" />
-            <include
-                android:id="@+id/showFeatured"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/showPintuMasuk"
-                layout="@layout/drawer_list_option_3" />
-            <include
-                android:id="@+id/showWisma"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/showFeatured"
-                layout="@layout/drawer_list_option_4" />
-            <include
-                android:id="@+id/showCafe"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/showWisma"
-                layout="@layout/drawer_list_option_5" />
-            <include
-                android:id="@+id/showToilet"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/showCafe"
-                layout="@layout/drawer_list_option_6" />
-            <include
-                android:id="@+id/showMusholla"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/showToilet"
-                layout="@layout/drawer_list_option_7" />
-
-        </RelativeLayout>
+        </LinearLayout>
 
     </android.support.v4.widget.DrawerLayout>
 

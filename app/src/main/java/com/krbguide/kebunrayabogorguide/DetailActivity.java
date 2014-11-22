@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 public class DetailActivity extends ActionBarActivity {
 
     // Toolbar

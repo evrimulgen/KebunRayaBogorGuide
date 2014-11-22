@@ -13,8 +13,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
@@ -24,7 +23,8 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 
     // Google Play Services
     compile 'com.google.android.gms:play-services:6.1.11'
@@ -35,10 +35,14 @@ dependencies {
     compile 'com.android.support:support-v13:21.0.0'
 
     // Custom Library
-       // Staggered GridView
-    compile 'com.etsy.android.grid:library:1.0.5'
-       // Floating Action Button
-    compile 'com.melnykov:floatingactionbutton:1.0.6'
-       // Material Dialog
-    compile 'me.drakeet.materialdialog:library:1.0.7'
+    // Android View Animations
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.easing:library:1.0.0@aar'
+    compile 'com.daimajia.androidanimations:library:1.1.2@aar'
+    // Material Dialog
+    compile project(':library:MaterialDialogs')
+    // License Dialog
+    compile ('de.psdev.licensesdialog:licensesdialog:1.6.0') {
+        exclude module: 'support-v4'
+    }
 }

@@ -26,12 +26,12 @@ Moved Files:
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => module_materialDesign\src\main\AndroidManifest.xml
-* assets\ => module_materialDesign\src\main\assets\
-* libs\nineoldandroids-2.4.0.jar => module_materialDesign\libs\nineoldandroids-2.4.0.jar
-* lint.xml => module_materialDesign\lint.xml
-* res\ => module_materialDesign\src\main\res\
-* src\ => module_materialDesign\src\main\java\
+* AndroidManifest.xml => materialDesign\src\main\AndroidManifest.xml
+* assets\ => materialDesign\src\main\assets\
+* libs\nineoldandroids-2.4.0.jar => materialDesign\libs\nineoldandroids-2.4.0.jar
+* lint.xml => materialDesign\lint.xml
+* res\ => materialDesign\src\main\res\
+* src\ => materialDesign\src\main\java\
 
 Missing Android Support Repository:
 -----------------------------------
