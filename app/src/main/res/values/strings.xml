@@ -16,6 +16,35 @@
     <string name="title_activity_help">Bantuan</string>
     <string name="title_activity_detail">Detail</string>
     <string name="title_activity_about">Tentang</string>
+    <string name="title_activity_about_krb">Tentang Kebun Raya Bogor</string>
+
+    <!-- For Activity Description -->
+    <string name="desc_activity_about_krb"><b>Tiket Masuk</b>\n\n
+
+        Sesuai dengan Peraturan Pemerintah Republik Indonesia Nomor: 106 Tahun 2012, Tanggal 24 Desember 2012, mulai 1 Maret 2013 berlaku tarif masuk bagi pengunjung Kebun Raya Bogor sebagai berikut :\n\n
+        - Tiket masuk Rp. 15.000 /orang\n
+        - Tiket wisatawan asing Rp. 25.000 /orang\n
+        - Kendaraan keliling roda 4 Rp. 30.000\n
+        - Kendaraan keliling roda 2 Rp. 5.000\n
+        - Tiket sepeda keliling Rp. 5.000\n\n
+
+        Tiket masuk sudah termasuk Asuransi Jasa Raharja Distribusi Pemkot dan Masuk Museum Zoologi. Untuk pemesanan fasilitas dan informasi silahkan hubungi Telp/Fax. (0251)8311362.\n\n
+
+        <b>Jam Buka</b>\n\n
+
+        Kebun: 07:30 - 17:30 WIB\n
+        Kantor*: 07:00 - 15:30 WIB\n
+        Layanan Informasi: 08:00 - 16:00 WIB\n
+        Perpustakaan*: 08:00 - 15:30 WIB\n
+        Herbarium: 08:00 - 15:00 WIB\n
+        Rumah Kaca Angrek: 08:00 - 15:30 WIB\n
+        Toko Tanaman dan Cideramata: 08:00 - 15:30 WIB\n
+        Cafe Dedaunan: 08:00 - 21:00 WIB\n
+        Museum Zoologi+: 08:00 - 16:00 WIB\n\n
+
+        *) Khusus hari Jum\'at (08:00 - 16:00 WIB). Sabtu, minggu dan hari libur tutup\n
+        +) Khusus hari Sabtu, minggu dan hari libur tutup(08:00 - 17:00 WIB)\n
+    </string>
 
     <!-- For Navigration Drawer Menu -->
     <string name="title_drawer_maps">Peta Lokasi</string>
@@ -29,6 +58,7 @@
     <string name="action_positive">OK</string>
     <string name="action_negative">Cancel</string>
     <string name="action_dismiss">Dismiss</string>
+    <string name="action_about_krb">Tentang Kebun Raya Bogor</string>
     <string name="action_about_developer">Tentang Pengembang</string>
     <string name="action_opensource_license">Lisensi OpenSource</string>
     <string name="action_about_developer_body">

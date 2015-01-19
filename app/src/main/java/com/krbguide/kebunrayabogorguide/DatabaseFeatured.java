@@ -189,7 +189,27 @@ public class DatabaseFeatured extends SQLiteOpenHelper {
         mValues.put("db_ico", R.drawable.ic_featured_areapembibitan);
         mValues.put("db_name", "Pembibitan");
         mValues.put("db_subname", "Nursery");
-        mValues.put("db_description", "Tempat dimana pembudidayaan benih biji. Unit seleksi lebih difokukskan pada pengembangan jenis-jenis terpilih, terutama dari jenis suku Araceae. Nepenthaceae dan jenis-jenis paku. Dari data inventarisasi jenis-jenis yang ada di unit seleksi adalah sebagai sebagai berikut : Suku Araceae terdiri atas 19 marga, 39 jenis dan 730 spesimen; Suku Nepentheceae terdiri atas 11 marga, 11 jenis; paku-pakuan terdiri atas 24 suku, 46 marga, dan sekitar 200 jenis. Target yang diharapkan dalam unit seleksi adalah hibridisasi.");
+        mValues.put("db_description", "Tempat dimana pembudidayaan benih biji. Unit seleksi lebih difokukskan pada pengembangan jenis-jenis terpilih, terutama dari jenis suku Araceae. Nepenthaceae dan jenis-jenis paku. Dari data inventarisasi jenis-jenis yang ada di unit seleksi adalah sebagai sebagai berikut : Suku Araceae terdiri atas 19 marga, 39 jenis dan 730 spesimen; Suku Nepentheceae terdiri atas 11 marga, 11 jenis; paku-pakuan terdiri atas 24 suku, 46 marga, dan sekitar 200 jenis. Target yang diharapkan dalam unit seleksi adalah hibridisasi. Berikut ini adalah benih biji yang dibudidayakan saat ini :\n\n" +
+                "1. Naemarica gracilis (Herb.) Sprague <Iridaceae>\n" +
+                "2. Dieffenbachia amoena Bull. <Araceae>\n" +
+                "3. Spathiphyllum cannifolium (Dryand ex. Sims) Schott <Araceae>\n" +
+                "4. Eucharis x grandiflora Planch. & Linden <Asparagaceae>\n" +
+                "5. Ophiopogon jaburan (Siebold) Lodd. <Asparagaceae>\n" +
+                "6. Hymenocallis speciosa (L.f. ex. Salisb.) Salisb. <Amaryllidaceae>\n" +
+                "7. Philodendron selloum K. Koch <Araceae>\n" +
+                "8. Carex morrowi var. morrowi <Liliaceae>\n" +
+                "9. Dracaena <Dracaenaceae>\n" +
+                "10. Dracaena compacta <Dracaenaceae>\n" +
+                "11. Hibiscus rosa-sinensis L. <Malvaceae>\n" +
+                "12. Dracaena reflexa Lam. <Asparagaceae>\n" +
+                "13. Chlorophytum laxum R. Br <Liliaceae>\n" +
+                "14. Dracaena reflexa Lam. <Dracaenaceae>\n" +
+                "15. Ophiopogon japonicus (Thunb.) Ker Gawl. <Asparagaceae>\n" +
+                "16. Alocasia reginula <Araceae>\n" +
+                "17. Spathoglottis plicata Blume <Orchidaceae>\n" +
+                "18. Osmoxylon lineare (Merr.) Philipson <Araliaceae>\n" +
+                "19. Dracaena sanderiana Sander (Variegata)<Iridaceae>\n" +
+                "20. Dieffenbachia amoena Bull. <Araceae>");
         mValues.put("db_coordinate", "-6.60185, 106.79735");
         db.insert("detail_featured", "_id", mValues);
 

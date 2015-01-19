@@ -23,7 +23,6 @@
             android:id="@+id/mContentLabel"
             android:layout_above="@+id/empty_view"
             android:layout_width="fill_parent"
-
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:ellipsize="marquee"

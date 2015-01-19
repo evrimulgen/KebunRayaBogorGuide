@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.1"
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
         applicationId "com.krbguide.kebunrayabogorguide"
@@ -27,12 +27,12 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
     // Google Play Services
-    compile 'com.google.android.gms:play-services:6.1.11'
+    compile 'com.google.android.gms:play-services:6.5.87'
 
     // Google Support Library
-    compile 'com.android.support:support-v4:21.0.0'
-    compile 'com.android.support:appcompat-v7:21.0.0'
-    compile 'com.android.support:support-v13:21.0.0'
+    compile 'com.android.support:support-v4:21.0.+'
+    compile 'com.android.support:appcompat-v7:21.0.+'
+    compile 'com.android.support:support-v13:21.0.+'
 
     // Custom Library
     // Android View Animations
@@ -40,7 +40,8 @@ dependencies {
     compile 'com.daimajia.easing:library:1.0.0@aar'
     compile 'com.daimajia.androidanimations:library:1.1.2@aar'
     // Material Dialog
-    compile project(':library:MaterialDialogs')
+    // compile project(':library:MaterialDialogs')
+    compile 'com.afollestad:material-dialogs:0.6.0'
     // License Dialog
     compile ('de.psdev.licensesdialog:licensesdialog:1.6.0') {
         exclude module: 'support-v4'

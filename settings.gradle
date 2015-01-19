@@ -1,1 +1,1 @@
-include ':app', ':library:MaterialDialogs', ':library:AStickyHeader'
+include ':app', ':library:AStickyHeader'

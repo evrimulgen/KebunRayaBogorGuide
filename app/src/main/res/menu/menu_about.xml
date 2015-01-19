@@ -6,6 +6,9 @@
     <item android:id="@+id/action_opensource_license"
         android:title="@string/action_opensource_license" />
 
+    <item android:id="@+id/action_about_krb"
+        android:title="@string/action_about_krb" />
+
     <item android:id="@+id/action_about_developer"
         android:title="@string/action_about_developer" />
 

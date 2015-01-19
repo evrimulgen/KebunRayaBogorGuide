@@ -171,7 +171,7 @@ public class DatabaseFacilities extends SQLiteOpenHelper {
 
         mValues.put("_id", "22");
         mValues.put("db_ico", R.drawable.ic_facilities_wisma);
-        mValues.put("db_name", "Wisma Tamu");
+        mValues.put("db_name", "Wisma Pinus");
         mValues.put("db_category", "Dekat Pintu Masuk 3");
         mValues.put("db_coordinate", "-6.59688, 106.80371");
         db.insert("detail_facilities", "_id", mValues);

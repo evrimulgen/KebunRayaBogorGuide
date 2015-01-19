@@ -1,7 +1,6 @@
 package com.krbguide.kebunrayabogorguide;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
@@ -12,27 +11,25 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.Theme;
 
 import de.psdev.licensesdialog.LicensesDialog;
 import de.psdev.licensesdialog.licenses.ApacheSoftwareLicense20;
-import de.psdev.licensesdialog.licenses.GnuLesserGeneralPublicLicense21;
 import de.psdev.licensesdialog.licenses.MITLicense;
 import de.psdev.licensesdialog.model.Notice;
 import de.psdev.licensesdialog.model.Notices;
 
 
-public class AboutActivity extends ActionBarActivity {
+public class AboutKRBActivity extends ActionBarActivity {
 
     /* AppCompat Toolbar */
     private Toolbar mToolbar;
-    int mTitle = R.string.title_activity_about;
+    int mTitle = R.string.title_activity_about_krb;
 
     /* Activity onCreate Method */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_about_krb);
 
         initToolbar();
 
@@ -64,32 +61,7 @@ public class AboutActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 NavUtils.navigateUpTo(this,
-                        new Intent(this, MapsActivity.class));
-                return true;
-            case R.id.action_opensource_license:
-                final Notices notices = new Notices();
-                notices.addNotice(new Notice("AOSP", "https://source.android.com/", "", new ApacheSoftwareLicense20()));
-                notices.addNotice(new Notice("material-dialogs", "https://github.com/afollestad/material-dialogs", "Copyright (c) 2014 Aidan Michael Follestad", new MITLicense()));
-
-                new LicensesDialog.Builder(this).setNotices(notices).setIncludeOwnLicense(true).build().show();
-                return true;
-            case R.id.action_about_krb:
-                Intent intent = new Intent(getApplicationContext(), AboutKRBActivity.class);
-                startActivity(intent);
-                return true;
-            case R.id.action_about_developer:
-                new MaterialDialog.Builder(this)
-                        .title(R.string.action_about_developer)
-                        .positiveText(R.string.action_positive)
-                        .content(Html.fromHtml(getString(R.string.action_about_developer_body)))
-                        .contentLineSpacing(1.6f)
-                        .callback(new MaterialDialog.SimpleCallback() {
-                            @Override
-                            public void onPositive(MaterialDialog dialog) {
-                            }
-                        })
-                        .build()
-                        .show();
+                        new Intent(this, AboutActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);
